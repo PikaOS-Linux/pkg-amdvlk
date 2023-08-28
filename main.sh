@@ -1,19 +1,8 @@
 #! /bin/bash
 
-DEBIAN_FRONTEND=noninteractive
+VERSION=2023.Q3.1
 
-# Clone Upstream
-mkdir -p ./src-pkg-name
-cp -rvf ./debian ./src-pkg-name/
-cd ./src-pkg-name/
-
-# Get build deps
-apt-get build-dep ./ -y
-
-# Build package
-dpkg-buildpackage --no-sign
-
-# Move the debs to output
-cd ../
 mkdir -p ./output
-mv ./*.deb ./output/
+cd ./output
+wget https://github.com/GPUOpen-Drivers/AMDVLK/releases/download/v-$VERSION/amdvlk_$VERSION_amd64.deb
+wget https://github.com/GPUOpen-Drivers/AMDVLK/releases/download/v-$VERSION/amdvlk_$VERSION_i386.deb
