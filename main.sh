@@ -1,6 +1,6 @@
 #! /bin/bash
 
-VERSION=2023.Q3.2
+VERSION=2023.Q4.1
 
 mkdir -p ./output
 cd ./output
